@@ -1,0 +1,34 @@
+#Offers {
+  background-color: #f3f4f6;
+  padding: 3.5rem 5rem;
+  .coupon-card {
+    img {
+      border-radius: 5px;
+    }
+    .coupon-code {
+      box-shadow: 0 1px 2px 0 rgb(0 0 0/0.05);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      background-color: #fff;
+      border-bottom-left-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 10px;
+      span {
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      button {
+        background-color: #fff;
+        border: none;
+        color: #019376;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
