@@ -1,0 +1,92 @@
+#Contact {
+  background-color: #f3f4f6;
+  padding: 3.5rem 2.5rem;
+  //   position: relative;
+  //   z-index: -1;
+  .leftSide {
+    padding: 1.25rem;
+    background-color: #fff;
+    height: 100%;
+
+    img {
+      margin-bottom: 2rem;
+    }
+    .address-first {
+      display: flex;
+      flex-direction: column;
+      span {
+        text-align: left;
+        &.text-heading {
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+        }
+        &.text-loc {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #888;
+        }
+      }
+    }
+    .address {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+      span {
+        text-align: left;
+        &.text-first {
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+        }
+        &.text-loc {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          color: #888;
+        }
+      }
+      a {
+        color: #019376;
+        text-decoration: none;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+      }
+      .down {
+        a {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  .rightSide {
+    padding: 2rem;
+    background-color: #fff;
+    height: 100%;
+
+    .text-head {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      font-family: Open Sans, system-ui, sans-serif;
+      text-align: left;
+    }
+    .form-label {
+      display: flex;
+      text-align: left;
+      font-weight: 600;
+      color: rgb(84, 82, 82);
+    }
+    .btn {
+      background-color: #0fb190;
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      text-align: left;
+      padding: 10px 20px;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        background-color: #019376;
+      }
+    }
+  }
+}
