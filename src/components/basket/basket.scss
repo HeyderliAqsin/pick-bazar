@@ -1,0 +1,28 @@
+.basket {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #019376;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  padding: 1.15rem;
+  padding-top: 0.875rem;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border: none;
+  z-index: 44;
+  color: #fff;
+  .items {
+    margin-left: 0.5rem;
+  }
+  .count {
+    margin-top: 0.75rem;
+    .text-count {
+      padding: 0.5rem;
+      background-color: #fff;
+      border-radius: 5px;
+      color: #019376;
+    }
+  }
+}

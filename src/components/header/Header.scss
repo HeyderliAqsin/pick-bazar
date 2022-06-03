@@ -1,12 +1,10 @@
 header {
   height: 5.25rem;
-  // position: fixed;
-  // width: 100%;
   &.active-header {
     background-color: #fff;
     position: fixed;
     width: 100%;
-    top: 0;
+    top: -5%;
     z-index: 3;
     .search {
       display: block !important;
