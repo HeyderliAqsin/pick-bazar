@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProductList.scss";
-
+import CardsData from "../CardsData"
 
 const ProductList = () => {
- 
+  const [data,setData]=useState(CardsData)
+  console.log(data)
+
   return (
     <>
       <section id="ProductList">
@@ -17,15 +19,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -33,7 +35,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -45,13 +47,13 @@ const ProductList = () => {
                     <div className=" num d-flex flex-1 align-items-center justify-content-center ">
                       1
                     </div>
-                    <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                    <button className="btns-plus" title="" onClick={()=>this.props.addToCart()}>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -72,23 +74,23 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        stroke=""
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -101,12 +103,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -127,15 +129,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -143,7 +145,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -156,12 +158,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -182,15 +184,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -198,7 +200,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -211,12 +213,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -237,15 +239,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -253,7 +255,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -266,12 +268,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -292,15 +294,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -308,7 +310,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -321,12 +323,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -347,15 +349,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -363,7 +365,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -376,12 +378,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -402,15 +404,15 @@ const ProductList = () => {
                   alt=""
                 />
                 <div className="card-body">
-                  <div class="text d-flex align-items-center mb-2">
-                    <span class="text-sm md:text-base text-heading font-semibold">
+                  <div className="text d-flex align-items-center mb-2">
+                    <span className="text-sm md:text-base text-heading font-semibold">
                       $1.60
                     </span>
-                    <del class="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
+                    <del className="text-xs md:text-sm text-muted ltr:ml-2 rtl:mr-2">
                       $2.00
                     </del>
                   </div>
-                  <h3 class="title">Apples</h3>
+                  <h3 className="title">Apples</h3>
                   <div className="d-flex btn-main">
                     <button className="btns-minus">
                       <span className="sr-only">minus</span>
@@ -418,7 +420,7 @@ const ProductList = () => {
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="h-3 w-3 stroke-2.5"
+                        className="h-3 w-3 stroke-2.5"
                       >
                         <path
                           stroke-linecap="round"
@@ -431,12 +433,12 @@ const ProductList = () => {
                       1
                     </div>
                     <button className="btns-plus" title="">
-                      <span class="sr-only">plus</span>
+                      <span className="sr-only">plus</span>
                       <svg
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
-                        class="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
+                        className="md:w-4.5 h-3.5 w-3.5 stroke-2.5 md:h-4.5"
                       >
                         <path
                           stroke-linecap="round"

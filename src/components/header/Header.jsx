@@ -55,7 +55,7 @@ const Header = () => {
               type="text"
               placeholder="Search your products from here"
             />
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </div>
           <nav>
             <ul className="d-flex list-unstyled align-items-center m-0">

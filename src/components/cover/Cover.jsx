@@ -8,22 +8,22 @@ export const Cover = () => {
         <img src="/images/grocery.webp" alt="" />
         <div className="centerText">
           <h1>Groceries Delivered in 90 Minute</h1>
-          <p class="text-sm lg:text-base xl:text-lg text-heading">
+          <p className="text-sm lg:text-base xl:text-lg text-heading">
             Get your healthy foods &amp; snacks delivered at your doorsteps all
             day everyday
           </p>
-          <div id="searchBox" class="input-group mb-3">
+          <div id="searchBox" className="input-group mb-3">
             <input
               id="search"
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="Search your product from here"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">
-                <i class="fas fa-search"></i>   
+            <div className="input-group-append">
+              <button className="btn btn-outline-secondary" type="button">
+                <i className="fas fa-search"></i>   
                 Search
               </button>
             </div>
