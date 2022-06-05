@@ -3,7 +3,7 @@ import './App.css';
 import { Footer } from './components/footer/Footer';
 import Header from './components/header/Header';
 import MyRouters from "./config/MyRouters"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">

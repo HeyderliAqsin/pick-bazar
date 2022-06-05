@@ -7,15 +7,20 @@ import ProductList from "../components/productlist/ProductList";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Cover />
       <Slider />
       <Basket />
-      <div className="d-flex">
+      <div
+        className="d-flex"
+        style={{
+          backgroundColor: "#f3f4f6",
+        }}
+      >
         <SideBarMenu />
         <ProductList />
       </div>
-    </>
+    </div>
   );
 };
 

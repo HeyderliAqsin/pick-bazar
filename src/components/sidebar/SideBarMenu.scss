@@ -1,4 +1,9 @@
 #SideBar {
   background-color: #fff;
-  width: 40%;
+  width: 50%;
+  margin-top: 5px;
+  .leftMenu {
+    position: sticky;
+    top: 0px;
+  }
 }

@@ -10,7 +10,7 @@ const MyRouters = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/shops" element={<Shops />} />
+      <Route  path="/shops" element={<Shops />} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/faq" element={<Faq/>} />
       <Route path="/offers" element={<Offers/>} />
