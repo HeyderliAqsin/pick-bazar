@@ -9,6 +9,7 @@
   padding-top: 0.875rem;
   position: fixed;
   top: 50%;
+  width: 120px;
   right: 0;
   border: none;
   z-index: 44;
@@ -16,10 +17,11 @@
   .items {
     margin-left: 0.5rem;
   }
-  .count {
+  .total {
     margin-top: 0.75rem;
     .text-count {
       padding: 0.5rem;
+      width: 100%;
       background-color: #fff;
       border-radius: 5px;
       color: #019376;
@@ -34,21 +36,78 @@
   }
 }
 .basket-body {
+  height: 100%;
+
+  .products {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    .basket-count {
+      border-radius: 15px;
+      border: none;
+      height: 100px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      span {
+        padding: 5px 0;
+        &.product-name {
+          font-weight: 600;
+        }
+        &.product-price {
+          font-weight: 600;
+          color: #019376;
+        }
+        &.product-quantity {
+          font-weight: 400;
+          color: #999;
+        }
+      }
+    }
+    .total {
+      font-weight: 700;
+    }
+    .close {
+      padding: 2px 7px;
+      border-radius: 50%;
+      background-color: rgb(247, 241, 241);
+      cursor: pointer;
+      i {
+        color: #ccc;
+      }
+      &:hover {
+        background-color: #ccc;
+        i {
+          color: red;
+        }
+      }
+    }
+  }
+}
+.empty {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
-  svg {
-    display: block;
-  }
-  h4 {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    margin-top: 1.5rem;
-    font-family: Open Sans, system-ui, sans-serif;
-  }
+  height: 80%;
+}
+svg {
+  display: block;
+}
+h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  font-family: Open Sans, system-ui, sans-serif;
 }
 footer {
   padding-top: 1.25rem;
@@ -72,22 +131,22 @@ footer {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    .checkout{
+    .checkout {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
       height: 100%;
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1.25rem;
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1.25rem;
     }
-    .total{
+    .total {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
       color: #019376;
       border-radius: 9999px;
-      background-color: #FFFFFF;
-      font-size: .875rem;
+      background-color: #ffffff;
+      font-size: 0.875rem;
       line-height: 1.25rem;
       font-weight: 700;
       cursor: pointer;
