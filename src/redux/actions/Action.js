@@ -1,5 +1,5 @@
 import { ADD_TO_CART } from "../constants/AddtoCart";
-import { REMOVE_TO_CART } from "../constants/RemoveToCart";
+import { DELETE_TO_CART, REMOVE_ONE } from "../constants/DeleteToCart";
 
 export const ADD = (item) => {
   return {
@@ -8,9 +8,16 @@ export const ADD = (item) => {
   };
 };
 
-export const REMOVE = (id) => {
-    return {
-      type: REMOVE_TO_CART,
-      payload: id,
-    };
+export const DELETE = (id) => {
+  return {
+    type: DELETE_TO_CART,
+    payload: id,
   };
+};
+
+export const REMOVE = (iteam) => {
+  return {
+    type: REMOVE_ONE,
+    payload: iteam,
+  };
+};
