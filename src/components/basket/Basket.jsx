@@ -2,34 +2,48 @@ import React, { useEffect, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./basket.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE } from "../../redux/actions/Action";
+import { DELETE, REMOVE } from "../../redux/actions/Action";
+import { ADD } from "../../redux/actions/Action";
+
 
 const Basket = ({ name, ...props }) => {
   const [show, setShow] = useState(false);
   const getdata = useSelector((state) => state.cartreducer.carts);
-  const [price,setPrice]=useState(0);
+  const [price, setPrice] = useState(0);
 
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
-  const rmv=(id)=>{
-    dispatch(REMOVE(id))
-  }
+  const rmv = (id) => {
+    dispatch(DELETE(id));
+  };
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const total=()=>{
-    let price=0;
-    getdata.map((ele,k)=>{
-       return price=ele.price + price
-    });
-    setPrice(price);
+  const total = newFunction(getdata, setPrice);
+
+  function newFunction(getdata, setPrice) {
+    return () => {
+      let price = 0;
+      getdata.map((ele, k) => {
+        return (price = ele.price*ele.quantity + price);
+      });
+      setPrice(price);
+    };
   }
 
-  useEffect(()=>{
-    total()
-  },[total])
-  
+  useEffect(() => {
+    total();
+  }, [total]);
+
+  const send = (e) => {
+    dispatch(ADD(e));
+  };
+  const remove = (item) => {
+    dispatch(REMOVE(item));
+  };
+
+
   return (
     <>
       <button className="basket" onClick={handleShow}>
@@ -111,13 +125,13 @@ const Basket = ({ name, ...props }) => {
         <Offcanvas.Body>
           {getdata.length ? (
             <div className="basket-body">
-              {getdata.map((e) => {
+              {getdata.map((e,id) => {
                 return (
-                  <div className="products d-flex align-items-center justify-content-between">
+                  <div className="products d-flex align-items-center justify-content-between" key={id}>
                     <button className="basket-count">
-                      <div className="plus">+</div>
-                      <div className="count">1</div>
-                      <div className="minus">-</div>
+                      <div className="plus" onClick={()=>send(e)}>+</div>
+                      <div className="count">{e.quantity}</div>
+                      <div className="minus" onClick={e.quantity <=1 ?()=>rmv(e.id) :()=>remove(e)}>-</div>
                     </button>
                     <div className="photo">
                       <img width={60} src={e.imgdata} alt="" />
@@ -125,12 +139,12 @@ const Basket = ({ name, ...props }) => {
                     <div className="info">
                       <span className="product-name">{e.rname}</span>
                       <span className="product-price">${e.price}</span>
-                      <span className="">3</span>
+                      <span className="">{e.quantity}</span>
                     </div>
                     <div className="total">
-                      <span>${e.price}</span>
+                      <span>${e.price * e.quantity}</span>
                     </div>
-                    <div className="close" onClick={()=>rmv(e.id)}>
+                    <div className="close" onClick={() => rmv(e.id)}>
                       <i className="fas fa-close"></i>
                     </div>
                   </div>
@@ -269,7 +283,6 @@ const Basket = ({ name, ...props }) => {
               <h4>No products found</h4>
             </div>
           )}
-
           <footer className="fixed bottom-0 w-full bg-light">
             <button className="btn">
               <span className=" checkout d-flex flex-1 align-items-center h-full px-5 text-light">
@@ -287,3 +300,4 @@ const Basket = ({ name, ...props }) => {
 };
 
 export default Basket;
+
