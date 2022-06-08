@@ -69,6 +69,7 @@ header {
         border-radius: 5px;
         margin-left: 15px;
         transition: 0.3s ease-in-out;
+        text-transform:capitalize;
         &:hover {
           background-color: #0d9e81;
         }

@@ -1,0 +1,73 @@
+.leftmenu {
+  position: sticky;
+  top: 80px;
+  height: 100%;
+  #sidebar {
+    margin-top: 8px;
+    padding: 2rem 0;
+    height: 100vh;
+    .ant-menu-rrot {
+      width: 30% !important;
+    }
+    .ant-menu-title {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+    .ant-menu-submenu-open {
+      color: #009f7f;
+    }
+    .ant-menu-submenu {
+      &:hover {
+        color: #009f7f;
+        .ant-menu-submenu-arrow {
+          color: #009f7f;
+        }
+        svg {
+          color: #009f7f;
+        }
+      }
+      &.active {
+        color: #009f7f;
+        svg {
+          color: #009f7f;
+        }
+      }
+    }
+    .ant-menu-title-content {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+
+    .ant-menu-item-icon {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+    .ant-menu-submenu-selected {
+      color: #009f7f;
+    }
+    .ant-menu-submenu-selected {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+    .ant-menu-submenu-title {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+    .ant-menu-item {
+      &:hover {
+        color: #009f7f;
+      }
+    }
+    .ant-menu-item-selected {
+      color: #009f7f;
+    }
+    .ant-menu-inline .ant-menu-item::after {
+      border-right: 3px solid #009f7f;
+    }
+  }
+}

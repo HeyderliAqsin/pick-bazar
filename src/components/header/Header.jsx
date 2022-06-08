@@ -5,10 +5,30 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Box, Button, Modal, Typography } from "@mui/material";
+import Login from "../login/Login";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 450,
+  height: 600,
+  bgcolor: "background.paper",
+  border: "none",
+  borderRadius: "15px",
+  boxShadow: 24,
+  p: 4,
+};
 
 const Header = () => {
   const [age, setAge] = useState("");
   const [bgColor, setBgColor] = useState("");
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -21,6 +41,7 @@ const Header = () => {
       setBgColor("");
     }
   });
+
   return (
     <header className={`header ${bgColor}`}>
       <section className="head">
@@ -71,8 +92,24 @@ const Header = () => {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
-              <button className="btnsell">Become a Seller</button>
-              <button className="btnjoin">Join</button>
+              <Link to="/">
+                <button className="btnsell">Become a Seller</button>
+              </Link>
+              <div className="login">
+                <Button className="btnjoin" onClick={handleOpen}>
+                  Join
+                </Button>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={style}>
+                    <Login />
+                  </Box>
+                </Modal>
+              </div>
             </ul>
           </nav>
         </div>

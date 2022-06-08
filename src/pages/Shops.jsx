@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Shop.scss";
+import "./Shops.scss";
 const Shops = () => {
   return (
     <>

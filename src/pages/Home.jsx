@@ -2,8 +2,8 @@ import React from "react";
 import Cover from "../components/cover/Cover";
 import Slider from "../components/slider/Slider";
 import Basket from "../components/basket/Basket";
-import SideBarMenu from "../components/sidebar/SideBarMenu";
 import ProductList from "../components/productlist/ProductList";
+import LeftMenu from "../components/leftmenu/LeftMenu";
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
           backgroundColor: "#f3f4f6",
         }}
       >
-        <SideBarMenu />
+        <LeftMenu />
         <ProductList />
       </div>
     </div>
