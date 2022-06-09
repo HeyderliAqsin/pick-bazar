@@ -5,7 +5,7 @@ export const Cover = () => {
   return (
     <>
       <div id="cover">
-        <img src="/images/grocery.webp" alt="" />
+        <div className="img"></div>
         <div className="centerText">
           <h1>Groceries Delivered in 90 Minute</h1>
           <p className="text-sm lg:text-base xl:text-lg text-heading">

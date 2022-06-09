@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 150) {
       setBgColor("active-header");
     } else {
       setBgColor("");
@@ -59,6 +59,7 @@ const Header = () => {
                   value={age}
                   label="Age"
                   onChange={handleChange}
+                  style={{backgroundColor:"#fff"}}
                 >
                   <MenuItem value="">
                     <em>None</em>

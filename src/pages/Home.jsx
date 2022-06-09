@@ -4,11 +4,16 @@ import Slider from "../components/slider/Slider";
 import Basket from "../components/basket/Basket";
 import ProductList from "../components/productlist/ProductList";
 import LeftMenu from "../components/leftmenu/LeftMenu";
+import "./Home.scss";
+import Header from "../components/header/Header";
 
 const Home = () => {
   return (
-    <div>
-      <Cover />
+    <div id="Home">
+      <div className="top">
+        <Header className="header" />
+        <Cover className="cover" />
+      </div>
       <Slider />
       <Basket />
       <div

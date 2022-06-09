@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Offers.scss";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Offers = () => {
+  const [value, setValue] = useState("");
+  console.log(value);
+  const [copy, setCopied] = useState(false);
+  var text = useRef();
+
+  useEffect(() => {
+    text.current.focus();
+    var coupon = text.current.innerText;
+    setValue(coupon);
+  }, [value]);
+
   return (
     <section id="Offers">
       <div className="coupon-card">
@@ -14,10 +26,27 @@ const Offers = () => {
                 alt=""
               />
               <div className="coupon-code">
-                <span class="text-heading">EID2</span>
-                <button class="copy">
-                  <span>Copy</span>
-                </button>
+                <span
+                  class="text-heading"
+                  ref={text}
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
+                >
+                  EID2
+                </span>
+                <CopyToClipboard text={text} onCopy={() => setCopied(true)}>
+                  <button class="copy" value={value} onClick={(e)=>e.target.value}>
+                    <span>
+                      {copy ? (
+                        <span style={{ textTransform: "capitalize" }}>
+                          Copied!
+                        </span>
+                      ) : (
+                        <span>Copy</span>
+                      )}
+                    </span>
+                  </button>
+                </CopyToClipboard>
               </div>
             </div>
             <div className="col-lg-2 mb-4">
@@ -27,10 +56,28 @@ const Offers = () => {
                 alt=""
               />
               <div className="coupon-code">
-                <span class="text-heading">EID2</span>
-                <button class="copy">
-                  <span>Copy</span>
-                </button>
+                <span
+                  class="text-heading"
+                  ref={text}
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
+                >
+                  EID245  
+                </span>
+                <CopyToClipboard text={text} onCopy={() => setCopied(true)}>
+                  <button class="copy">
+                    <span>
+                      {" "}
+                      {copy ? (
+                        <span style={{ textTransform: "capitalize" }}>
+                          Copied!
+                        </span>
+                      ) : (
+                        <span>Copy</span>
+                      )}
+                    </span>
+                  </button>
+                </CopyToClipboard>
               </div>
             </div>
             <div className="col-lg-2 mb-4">
@@ -79,7 +126,7 @@ const Offers = () => {
                 alt=""
               />
               <div className="coupon-code">
-                <span class="text-heading">EID2</span>
+                <span class="text-heading">EID22</span>
                 <button class="copy">
                   <span>Copy</span>
                 </button>
@@ -105,7 +152,7 @@ const Offers = () => {
                 alt=""
               />
               <div className="coupon-code">
-                <span class="text-heading">EID2</span>
+                <span class="text-heading">EID28</span>
                 <button class="copy">
                   <span>Copy</span>
                 </button>

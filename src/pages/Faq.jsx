@@ -13,7 +13,7 @@ const Faq = () => {
   };
   return (
     <section id="Faq">
-      <h1>FAQ</h1>
+      <h1 className="text-center mb-3">FAQ</h1>
       <div className="container" style={{ width: "80%" }}>
         <Accordion
           expanded={expanded === "panel1"}
