@@ -35,7 +35,7 @@ const Header = () => {
   };
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 150) {
+    if (window.scrollY > 200) {
       setBgColor("active-header");
     } else {
       setBgColor("");
@@ -94,7 +94,7 @@ const Header = () => {
                 <Link to="/contact">Contact</Link>
               </li>
               <Link to="/">
-                <button className="btnsell">Become a Seller</button>
+                <Button className="btnsell">Become a Seller</Button>
               </Link>
               <div className="login">
                 <Button className="btnjoin" onClick={handleOpen}>

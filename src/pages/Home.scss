@@ -3,6 +3,9 @@
         position: relative;
         .header{
             background-color: transparent !important;
+            &.active-header {
+                background-color: #fff !important;
+            }
         }
         .cover{
             position: absolute;

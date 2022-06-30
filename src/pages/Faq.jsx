@@ -12,6 +12,7 @@ const Faq = () => {
     setExpanded(isExpanded ? panel : false);
   };
   return (
+    <>
     <section id="Faq">
       <h1 className="text-center mb-3">FAQ</h1>
       <div className="container" style={{ width: "80%" }}>
@@ -101,6 +102,7 @@ const Faq = () => {
         </Accordion>
       </div>
     </section>
+    </>
   );
 };
 

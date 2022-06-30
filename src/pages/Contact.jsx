@@ -4,6 +4,7 @@ import "./Contact.scss";
 
 const Contact = () => {
   return (
+    <>
     <section id="Contact">
       <div className="container">
         <div className="row">
@@ -148,6 +149,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

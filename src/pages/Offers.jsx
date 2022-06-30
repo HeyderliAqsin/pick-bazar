@@ -15,6 +15,7 @@ const Offers = () => {
   }, [value]);
 
   return (
+    <>
     <section id="Offers">
       <div className="coupon-card">
         <div className="container">
@@ -188,6 +189,7 @@ const Offers = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
