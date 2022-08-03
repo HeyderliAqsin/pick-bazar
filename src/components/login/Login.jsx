@@ -15,6 +15,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { Modal } from "@mui/material";
 import Register from "../register/Register";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"; 
+import { loginAction } from "../../redux/actions/UserActions";
 
 
 const theme = createTheme();
@@ -34,7 +37,11 @@ const style = {
 };
 
 const Login = () => {
-  
+  const { userInfo } = useSelector((st) => st.userLogin);
+  console.log(userInfo)
+  const dispatch = useDispatch();
+  const navi = useNavigate();
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -44,13 +51,16 @@ const Login = () => {
     formState: {isSubmitting, errors,isValid },
   } = useForm({mode:"all"});
 
-  const handleFormSubmit = (event) => {
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+  const handleFormSubmit = (data) => {
+    dispatch(loginAction(data.email, data.password));
   };
+  React.useEffect(() => {
+    if (userInfo && userInfo.token) {
+      navi("/");
+    }
+  }, [navi, userInfo]);
+  
 
   return (
     <ThemeProvider theme={theme}>
