@@ -8,11 +8,7 @@ import Select from "@mui/material/Select";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import Login from "../login/Login";
 import { useDispatch, useSelector } from "react-redux";
-<<<<<<< HEAD
 import { logoutAction } from "../../redux/actions/UserAction";
-=======
-import { logoutAction } from "../../redux/actions/UserActions";
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
 
 const style = {
   position: "absolute",
@@ -29,19 +25,15 @@ const style = {
 };
 
 const Header = () => {
-  const { userInfo } = useSelector((st) => st.userLogin);
   const [age, setAge] = useState("");
   const [bgColor, setBgColor] = useState("");
-  const {userInfo} =useSelector((s)=>s.userLogin)
+  const { userInfo } = useSelector((s) => s.userLogin);
   // const [isVisible, setIsVisible] = useState("");
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const dispatch=useDispatch();
-
-  const dispatch=useDispatch();
-
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -74,7 +66,7 @@ const Header = () => {
                   value={age}
                   label="Age"
                   onChange={handleChange}
-                  style={{backgroundColor:"#fff"}}
+                  style={{ backgroundColor: "#fff" }}
                 >
                   <MenuItem value="">
                     <em>None</em>
@@ -86,13 +78,13 @@ const Header = () => {
               </FormControl>
             </div>
             <div className="search d-none">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Search your products from here"
-            />
-            <i className="fas fa-search"></i>
-          </div>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Search your products from here"
+              />
+              <i className="fas fa-search"></i>
+            </div>
           </div>
           <nav>
             <ul className="d-flex list-unstyled align-items-center m-0">
@@ -110,48 +102,40 @@ const Header = () => {
               </li>
               {/* <Link to="/">
                 <Button className="btnsell">Become a Seller</Button>
-<<<<<<< HEAD
+
               </Link> */}
-              {userInfo && userInfo.token ?(
-                  <>
-                  <Link style={{padding:"0 10px"}} to={"#"}>{userInfo.email}</Link>
-                  <li> <button onClick={()=>dispatch(logoutAction())} className="btn btn-warning" style={{color:"#fff"}}>Logout</button></li>
-                  </>
-              ):(
-                <div className="login">
-=======
-              </Link>
               {userInfo && userInfo.token ? (
                 <>
-                 <li><Link to={"#"}>{userInfo.email}</Link></li>
-                <li> <button onClick={()=>dispatch(logoutAction())} className="btn btn-warning">Logout</button></li>
+                  <Link style={{ padding: "0 10px" }} to={"#"}>
+                    {userInfo.email}
+                  </Link>
+                  <li>
+                    {" "}
+                    <button
+                      onClick={() => dispatch(logoutAction())}
+                      className="btn btn-warning"
+                      style={{ color: "#fff" }}
+                    >
+                      Logout
+                    </button>
+                  </li>
                 </>
               ) : (
-                <>
-              <div className="login">
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
-                <Button className="btnjoin" onClick={handleOpen}>
-                  Join
-                </Button>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="modal-modal-title"
-                  aria-describedby="modal-modal-description"
-                >
-                  <Box sx={style}>
-                    <Login />
-                  </Box>
-                </Modal>
-              </div>
-<<<<<<< HEAD
+                <div className="login">
+                  <Button className="btnjoin" onClick={handleOpen}>
+                    Join
+                  </Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                  >
+                    <Box sx={style}>
+                      <Login />
+                    </Box>
+                  </Modal>
+                </div>
               )}
-           
-=======
-              </>
-              )
-              }
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
             </ul>
           </nav>
         </div>
