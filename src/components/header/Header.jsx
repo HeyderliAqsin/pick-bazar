@@ -8,7 +8,11 @@ import Select from "@mui/material/Select";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import Login from "../login/Login";
 import { useDispatch, useSelector } from "react-redux";
+<<<<<<< HEAD
 import { logoutAction } from "../../redux/actions/UserAction";
+=======
+import { logoutAction } from "../../redux/actions/UserActions";
+>>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
 
 const style = {
   position: "absolute",
@@ -25,14 +29,16 @@ const style = {
 };
 
 const Header = () => {
+  const { userInfo } = useSelector((st) => st.userLogin);
   const [age, setAge] = useState("");
   const [bgColor, setBgColor] = useState("");
   const {userInfo} =useSelector((s)=>s.userLogin)
   // const [isVisible, setIsVisible] = useState("");
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const dispatch=useDispatch();
 
   const dispatch=useDispatch();
 
@@ -104,6 +110,7 @@ const Header = () => {
               </li>
               {/* <Link to="/">
                 <Button className="btnsell">Become a Seller</Button>
+<<<<<<< HEAD
               </Link> */}
               {userInfo && userInfo.token ?(
                   <>
@@ -112,6 +119,17 @@ const Header = () => {
                   </>
               ):(
                 <div className="login">
+=======
+              </Link>
+              {userInfo && userInfo.token ? (
+                <>
+                 <li><Link to={"#"}>{userInfo.email}</Link></li>
+                <li> <button onClick={()=>dispatch(logoutAction())} className="btn btn-warning">Logout</button></li>
+                </>
+              ) : (
+                <>
+              <div className="login">
+>>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
                 <Button className="btnjoin" onClick={handleOpen}>
                   Join
                 </Button>
@@ -126,8 +144,14 @@ const Header = () => {
                   </Box>
                 </Modal>
               </div>
+<<<<<<< HEAD
               )}
            
+=======
+              </>
+              )
+              }
+>>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
             </ul>
           </nav>
         </div>
