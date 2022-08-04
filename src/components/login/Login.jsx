@@ -15,6 +15,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { Modal } from "@mui/material";
 import Register from "../register/Register";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../redux/actions/UserAction";
 
 
 const theme = createTheme();
@@ -34,23 +37,28 @@ const style = {
 };
 
 const Login = () => {
-  
+  const dispatch=useDispatch()
+  const navi=useNavigate()
+  const {userInfo}=useSelector(s=>s.userLogin)
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const {
     register,
     handleSubmit,
     formState: {isSubmitting, errors,isValid },
   } = useForm({mode:"all"});
 
-  const handleFormSubmit = (event) => {
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+  const handleFormSubmit = (data) => {
+  dispatch(loginAction(data.email,data.password))
+    };
+    React.useEffect(()=>{
+      if(userInfo && userInfo.token){
+        navi("/")
+      }
+  },[navi,userInfo])
 
   return (
     <ThemeProvider theme={theme}>
@@ -105,7 +113,7 @@ const Login = () => {
               label="Remember me"
             />
             <Button
-              // disabled={!isValid}
+              disabled={!isValid}
               loading={isSubmitting}
               type="submit"
               fullWidth

@@ -21,6 +21,7 @@ const ProductList = ({ loading, data }) => {
                           className="card-img-top"
                           src={element.photoUrl}
                           alt={element.name}
+                          style={{height:"100%"}}
                         />
                         <div className="card-body">
                           <div className="text d-flex align-items-center mb-2">

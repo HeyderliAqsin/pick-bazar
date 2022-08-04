@@ -5,7 +5,7 @@ const Shops = () => {
   return (
     <>
       <section id="Shop">
-        <hr />
+        {/* <hr /> */}
         <div className="shops">
           <div className="container">
             <h3>All Shops</h3>
