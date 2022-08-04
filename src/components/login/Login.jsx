@@ -15,15 +15,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useForm } from "react-hook-form";
 import { Modal } from "@mui/material";
 import Register from "../register/Register";
-<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginAction } from "../../redux/actions/UserAction";
-=======
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux"; 
-import { loginAction } from "../../redux/actions/UserActions";
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
 
 
 const theme = createTheme();
@@ -43,16 +37,9 @@ const style = {
 };
 
 const Login = () => {
-<<<<<<< HEAD
   const dispatch=useDispatch()
   const navi=useNavigate()
   const {userInfo}=useSelector(s=>s.userLogin)
-=======
-  const { userInfo } = useSelector((st) => st.userLogin);
-  console.log(userInfo)
-  const dispatch = useDispatch();
-  const navi = useNavigate();
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -64,7 +51,6 @@ const Login = () => {
     formState: {isSubmitting, errors,isValid },
   } = useForm({mode:"all"});
 
-<<<<<<< HEAD
   const handleFormSubmit = (data) => {
   dispatch(loginAction(data.email,data.password))
     };
@@ -73,18 +59,6 @@ const Login = () => {
         navi("/")
       }
   },[navi,userInfo])
-=======
-
-  const handleFormSubmit = (data) => {
-    dispatch(loginAction(data.email, data.password));
-  };
-  React.useEffect(() => {
-    if (userInfo && userInfo.token) {
-      navi("/");
-    }
-  }, [navi, userInfo]);
-  
->>>>>>> 6a59d2383598a1839a9a619ce33b618076584032
 
   return (
     <ThemeProvider theme={theme}>
